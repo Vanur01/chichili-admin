@@ -34,11 +34,13 @@ const CategoryPage = () => {
     setError,
   } = useCategoryStore();
 
+  console.log(CategoryModal);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
   const [deleteModal, setDeleteModal] = useState(false);
   const [categoryToDelete, setCategoryToDelete] = useState<Category | null>(
-    null
+    null,
   );
   const [isDeleting, setIsDeleting] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -414,7 +416,7 @@ const CategoryPage = () => {
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             {category.createdAt
                               ? new Date(
-                                  category.createdAt
+                                  category.createdAt,
                                 ).toLocaleDateString()
                               : "N/A"}
                           </td>
@@ -433,7 +435,7 @@ const CategoryPage = () => {
                             </button>
                           </td>
                         </tr>
-                      )
+                      ),
                     )
                   )}
                 </tbody>
