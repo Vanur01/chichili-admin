@@ -35,14 +35,7 @@ export default function Login() {
       console.log("Login successful:", user);
       toast.success("Login successful!");
 
-      // Navigate based on role and vendor registration status
-      if (user?.role?.toLowerCase() === "admin") {
-        router.push("/home");
-      } else if (vendor && vendor.userId === user?._id) {
-        router.push("/home");
-      } else {
-        router.push("/vendorsOnboard");
-      }
+      router.push("/home");
     } catch (error: unknown) {
       let message = "Login failed. Please try again.";
       if (error instanceof AxiosError) {
