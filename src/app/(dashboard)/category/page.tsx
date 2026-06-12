@@ -34,7 +34,7 @@ const CategoryPage = () => {
     setError,
   } = useCategoryStore();
 
-  console.log(CategoryModal);
+  // console.log(CategoryModal);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
